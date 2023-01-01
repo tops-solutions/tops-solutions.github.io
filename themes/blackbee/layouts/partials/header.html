@@ -1,0 +1,44 @@
+{{$title:= default site.Title .Page.Title}}
+<header class="bg-dark border-top border-1 border-primary">
+  <div class="container">
+    <div class="row gx-5 align-items-center justify-content-center py-5">
+      <div class="col-xl-5 col-xxl-6 d-xl-block text-center">
+        <img
+          src="/images/logo-white.svg"
+          alt="logo of TOPS Solutions BV"
+        />
+      </div>
+      <div class="col-lg-8 col-xl-7 col-xxl-6">
+        <div class="my-5 text-center text-xl-start">
+            <h1 class="display-5 fw-bolder text-primary mb-2">{{ .Title }}</h1>
+            <p class="lead fw-normal text-white-50 mb-4">{{ .Params.subtitle | humanize | markdownify }}</p>
+            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                <a class="btn btn-outline-primary btn-lg px-4 me-sm-3 text-primary" href="/blog/">Go to blog</a>
+                <a class="btn btn-outline-primary btn-lg px-4 text-primary disabled" href="/contact-us">Contact us</a>
+            </div>
+        </div>
+    </div>
+  </div>
+  </div>
+</header>
+<header class="bg-dark border-top border-bottom border-1 border-primary">
+  <div class="container">
+    <div class="row align-items-center justify-content-center align-middle">
+      <div class="text-center text-secondary py-3">
+        <span class="align-middle">
+          Built with
+          <a href="https://gohugo.io/" target="_blank"
+            ><img src="/images/hugo-logo.svg" height="30px"
+          /></a>
+          &
+          <a href="https://getbootstrap.com/" target="_blank"
+            ><img src="/images/bootstrap-logo.svg" height="30px" /></a
+          > &middot; Hosted on
+          <a href="https://pages.github.com/" target="_blank"
+            ><img src="/images/github-logo.svg" height="30px" /></a
+          >
+        </span>
+      </div>
+    </div>
+  </div>
+</header>

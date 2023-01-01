@@ -1,0 +1,42 @@
+{{- range ( where site.RegularPages "Section" "blog" | first 3 ) }}
+<div class="col-lg-4 mb-5 text-secondary">
+    <div class="card h-100 shadow border-0">
+      {{ $cover := .Resources.GetMatch "images/cover.jpg" }}
+      {{with $cover }}
+        {{ $scaled := .Fill "600x350 smart" }}
+        <img src="{{ $scaled.Permalink }}" alt="{{ with $.Page.Params.title }}{{ . }}{{ end }}" class="img-fluid" height="auto">
+      {{ end }}
+      <div class="card-body p-4">
+        {{ range .Params.tags }}
+        <div class="badge bg-primary bg-gradient rounded-pill mb-2">
+            {{ . }}
+          </div>
+        {{ end }}
+        <a class="text-decoration-none link-dark stretched-link" href="#!"
+          ><h5 class="card-title mb-3 text-secondary">{{ .Title }}</h5></a
+        >
+        <p class="card-text mb-0">
+          {{ .Description }}
+        </p>
+      </div>
+      <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+        <div class="d-flex align-items-end justify-content-between">
+          <div class="d-flex align-items-center">
+            <!-- <img
+              class="rounded-circle me-3"
+              src="https://dummyimage.com/40x40/ced4da/6c757d"
+              alt="..."
+            /> -->
+            <div class="small">
+              <div class="fw-bold">{{ .Params.author }}</div>
+              <div class="text-muted">
+                {{ .Lastmod.Format "Mon, 2 Jan 2006" }} &middot; {{ .ReadingTime }} min read
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="{{ .Permalink }}" class="btn btn-primary stretched-link m-2">Read</a>
+    </div>
+  </div>
+{{ end }}

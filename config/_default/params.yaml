@@ -1,0 +1,15 @@
+color: "#6FCAF3"
+copyright: "Copyright &copy; 2021-2023 TOPS Solutions BV. All Rights Reserved."
+footer:
+  - title: About
+    content: Blackbee Machine Intelligence
+  - title: Recent Blog Posts
+    recents: blog
+    recentCount: 7
+  - title: Important Links
+    menu: true
+  - title: Contact Us
+    contact: true
+recent_posts:
+  enable: true
+  

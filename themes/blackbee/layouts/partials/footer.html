@@ -1,0 +1,10 @@
+<footer class="bg-dark py-4 mt-auto">
+    <div class="container px-5">
+        <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+            <div class="col-auto"><div class="small m-0 text-primary">{{.Param "copyright" | markdownify}}</div></div>
+            <div class="col-auto">
+                {{ partial "menu.html" site.Menus.footer }}
+            </div>
+        </div>
+    </div>
+</footer>

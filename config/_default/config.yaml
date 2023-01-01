@@ -1,0 +1,8 @@
+baseURL: https://www.topssolutions.eu/
+languageCode: en-gb
+title: TOPS Solutions
+theme: blackbee
+enableEmoji: true
+enableGitInfo: true
+permalinks:
+  blog: /blog/:slug/

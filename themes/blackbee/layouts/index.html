@@ -1,0 +1,20 @@
+{{define "bodyClass"}}home{{end}}
+
+{{define "main"}} {{ partial "header.html" . }}
+
+<!-- Blog preview section-->
+<section>
+  <div class="container px-5">
+    <div class="row gx-5 justify-content-center">
+      <div class="col-lg-8 col-xl-6">
+        <div class="text-center">
+          <h2 class="fw-bolder my-5 text-secondary">Most recent blog posts</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row gx-5">
+        {{ partial "recent-posts.html" . }}
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,58 @@
+{{ define "main" }}
+<section>
+  <div class="container px-5 my-5">
+    {{ partial "breadcrumb.html" . }}
+    <div class="row gx-5">
+      <div class="col-lg-3">
+        <div class="d-flex align-items-center mt-lg-5 mb-4">
+          <div class="ms-3">
+            <div class="fw-bold text-secondary">{{ .Params.author }}</div>
+            {{ range .Params.tags }}
+            <div class="badge bg-primary bg-gradient rounded-pill mb-2">
+              {{ . }}
+            </div>
+            {{ end }}
+            <div class="text-muted fst-italic mb-2">
+              {{ .Lastmod.Format "Mon, 2 Jan 2006" }}
+            </div>
+            <div class="text-muted mb-2">
+              {{ .ReadingTime }} min read
+            </div>
+            <br>
+            <div class="text-muted mb-2">
+                Table of Contents:
+            </div>
+            {{ .TableOfContents }}
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <div class="d-flex align-items-center mt-lg-3 mb-4"></div>
+        <!-- Post content-->
+        <article>
+          <!-- Post header-->
+          <header class="mb-4">
+            <!-- Post title-->
+            <h1 class="fw-bolder mb-1 text-secondary">{{ .Title }}</h1>
+            <!-- Post meta content-->
+          </header>
+          <!-- Preview image figure-->
+          <figure class="mb-4">
+            {{ $cover := .Resources.GetMatch "images/cover.jpg" }} {{with $cover
+            }} {{ $scaled := .Fill "900x400 smart" }}
+            <img
+              class="img-fluid rounded center"
+              src="{{ $scaled.Permalink }}"
+              alt="{{ with $.Page.Params.title }}{{ . }}{{ end }}"
+            />
+            {{ end }}
+          </figure>
+          <!-- Post content-->
+          <section class="mb-5">{{ .Content }}</section>
+        </article>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+{{ end }}
